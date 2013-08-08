@@ -16,3 +16,42 @@ library(devtools)
 install_github("shiny-rgl", "trestletech")
 ```
 
+The package requires RGL version 0.93.949 or later (which is available on CRAN
+via `install.packages("rgl")`). However, some additional functionality has been
+developed for RGL and submitted [as a patch](https://r-forge.r-project.org/tracker/index.php?func=detail&aid=4877&group_id=234&atid=948). When this functionality is
+incorporated, you'll find that the user's adjusted viewpoint of a WebGL scene
+is persisted between server-side scene generations. For instance, if a user were
+to zoom in and pan a WebGL scene, then alter the scene by changing some setting,
+their zoom and pan settings would be unaltered when the scene was regenerated on 
+the server. Hopefully this code wil be integrated into RGL shortly; in the
+meantime, if this feature is important to you, you can build RGL on your own 
+system after applying the patch available at the link above.
+
+
+License
+-------
+
+The development of this project was generously sponsored by the [Institut de 
+Radioprotection et de Sûreté Nucléaire](http://www.irsn.fr/EN/Pages/home.aspx) 
+and performed by [Jeff Allen](http://trestletech.com). The code is
+licensed under The MIT License (MIT).
+
+Copyright (c) 2013 Institut de Radioprotection et de Sûreté Nucléaire
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.

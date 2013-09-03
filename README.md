@@ -25,6 +25,10 @@ be as simple as adding lines like the following:
 ...
 ```
 
+And you should see something like the following added to your Shiny app, though it will be interactive as seen [here](http://trestletech.github.io/shinyRGL/).
+
+![3dplot](http://trestletech.github.io/shinyRGL/images/3dplot.png)
+
 Installation
 ------------
 

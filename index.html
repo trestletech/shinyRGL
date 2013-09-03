@@ -32,7 +32,7 @@
           <h1>
 <a name="shiny-rgl" class="anchor" href="#shiny-rgl"><span class="octicon octicon-link"></span></a>Introduction</h1>
 
-<p><a href="http://rstudio.com/shiny/">Shiny</a> wrapper for the <a href="https://r-forge.r-project.org/projects/rgl/">RGL package</a>. This package enables users to create Shiny apps that use
+<p>ShinyRGL is a <a href="http://rstudio.com/shiny/">Shiny</a> wrapper for the <a href="https://r-forge.r-project.org/projects/rgl/">RGL package</a>. This package enables users to create Shiny apps that use
 interactive 3D graphics in WebGL using the RGL package. The implementation can
 be as simple as adding lines like the following:</p>
 
@@ -47,7 +47,7 @@ be as simple as adding lines like the following:</p>
 <p><span style="font-weight: bold;">server.R</span></p>
 
 <div class="highlight"><pre>...
-  output<span class="nv">$myWebGLr</span> &lt;- renderWebGL<span class="o">({</span>
+  output<span class="nv">$myWebGL</span> &lt;- renderWebGL<span class="o">({</span>
     points3d<span class="o">(</span>1:10, 1:10, 1:10<span class="o">)</span>
     axes3d<span class="o">()</span>
   <span class="o">})</span>

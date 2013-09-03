@@ -21,6 +21,10 @@ renderWebGL <- function(expr, width="auto", height="auto", env = parent.frame(),
                      quoted = FALSE){
   func <- exprToFunction(expr, env, quoted)
   return(function(shinysession, name, ...) {
+    # Not to ruin all this 'imports' business, but we need r3dDefaults in the
+    # global namespace or rgl will crash, so we'll have to load it here.
+    library(rgl)
+    
     #Open a null RGL device.
     open3d(useNULL = TRUE)    
     func()

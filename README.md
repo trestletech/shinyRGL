@@ -18,7 +18,7 @@ be as simple as adding lines like the following:
 
 ```bash
 ...
-  output$myWebGLr <- renderWebGL({
+  output$myWebGL <- renderWebGL({
     points3d(1:10, 1:10, 1:10)
     axes3d()
   })

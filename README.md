@@ -39,7 +39,7 @@ You can install the latest version of the code using the `devtools` R package.
 install.packages("devtools")
 
 library(devtools)
-install_github("shiny-rgl", "trestletech")
+install_github("shinyRGL", "trestletech")
 ```
 
 The package requires RGL version 0.93.949 or later (which is available on CRAN

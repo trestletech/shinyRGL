@@ -1,7 +1,29 @@
 shiny-rgl
 =========
 
-Shiny wrapper for RGL.
+[Shiny](http://rstudio.com/shiny/) wrapper for the [RGL package](https://r-forge.r-project.org/projects/rgl/). This package enables users to create Shiny apps that use
+interactive 3D graphics in WebGL using the RGL package. The implementation can
+be as simple as adding lines like the following:
+
+### ui.R
+
+```bash
+...
+  # Create an output element (works just like 'plotOutput()')
+  webGLOutput("myWebGL")
+...
+```
+
+### server.R
+
+```bash
+...
+  output$myWebGLr <- renderWebGL({
+    points3d(1:10, 1:10, 1:10)
+    axes3d()
+  })
+...
+```
 
 Installation
 ------------

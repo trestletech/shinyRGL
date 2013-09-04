@@ -1213,6 +1213,22 @@ be as simple as adding lines like the following:</p>
   
   You must enable Javascript to view this page properly.</p>
 
+<h1>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h1>
+
+The package ships with two examples:
+
+<h2>3D Scatterplot</h2>
+
+Code is available <a href = "https://github.com/trestletech/shinyRGL/tree/master/inst/examples/scatterplot">here</a>
+
+<iframe src="http://spark.rstudio.com/trestletech/3dscatter/" width="688" height="688"></iframe>
+
+<h2>3D Bivariate Normal Distribution</h2>
+
+Code is available <a href = "https://github.com/trestletech/shinyRGL/tree/master/inst/examples/bivar">here</a>
+
+<iframe src="http://spark.rstudio.com/trestletech/bivar/" width="688" height="688"></iframe>
 
 <h1>
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
@@ -1224,6 +1240,9 @@ install.packages("devtools")
 
 library(devtools)
 install_github("shinyRGL", "trestletech")
+
+# OPTIONAL (for persistent viewpoint between WebGL scene refreshes)
+install_github("rgl", "trestletech", "js-class")
 </code></pre>
 
 <h1>

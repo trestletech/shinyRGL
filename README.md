@@ -50,9 +50,42 @@ is persisted between server-side scene generations. For instance, if a user were
 to zoom in and pan a WebGL scene, then alter the scene by changing some setting,
 their zoom and pan settings would be unaltered when the scene was regenerated on 
 the server. Hopefully this code wil be integrated into RGL shortly; in the
-meantime, if this feature is important to you, you can build RGL on your own 
-system after applying the patch available at the link above.
+meantime, you can install my patched version of RGL using the following command:
 
+```
+install_github("rgl", "trestletech", "js-class")
+```
+
+That will give you the persistent viewpoint seen 
+[here](http://spark.rstudio.com/trestletech/3dscatter/) (Try panning and zooming a 
+bit then adjusting the sliders. You'll note that your viewpoint isn't reset.)
+
+Though you don't need much X11 code or even XVFB, you will likely need to install
+some OpenGL packages in order to compile the rgl package. On Ubuntu, this package
+is `libglu1-mesa-dev`.
+
+Running on a Headless Server like EC2
+--------------------------------------
+
+The ability to use a "null device" was recently added to RGL, allowing you to
+use RGL (thus shinyRGL) on a headless server without having to emulate a
+framebuffer using XVFB. This is still new code to RGL, however, so there are a
+few quirks to get it working. Primarily: you'll need to set an option in R using
+`options(rgl.useNULL=TRUE)` or set an environment variable named `RGL_USE_NULL`
+*before* loading RGL. If you don't do this, you'll see a lot of this error in R:
+
+```
+Warning in rgl.init(initValue, onlyNULL) :
+  RGL: unable to open X11 display
+Warning in fun(libname, pkgname) : error in rgl_init
+```
+
+or `Error: rgl.open failed` in your shiny app. 
+
+You can either do this explicitly by running the necessary command before 
+loading rgl (as is done in the examples) in your application code,
+or you can place the command in your `.Rprofile` file so that it's executed
+each time you start R, before RGL has a chance to load.
 
 License
 -------

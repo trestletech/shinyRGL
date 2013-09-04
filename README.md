@@ -40,6 +40,9 @@ install.packages("devtools")
 
 library(devtools)
 install_github("shinyRGL", "trestletech")
+
+# OPTIONAL (see below)
+install_github("rgl", "trestletech", "js-class")
 ```
 
 The package requires RGL version 0.93.949 or later (which is available on CRAN

@@ -1,3 +1,4 @@
+# Must be executed BEFORE rgl is loaded on headless devices.
 library(shiny)
 library(shinyRGL)
 

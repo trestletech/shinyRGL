@@ -1,4 +1,8 @@
+# Must be executed BEFORE rgl is loaded on headless devices.
+options(rgl.useNULL=TRUE)
+
 library(shiny)
+library(rgl)
 library(shinyRGL)
 library(MASS)
 

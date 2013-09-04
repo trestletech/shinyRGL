@@ -14,7 +14,9 @@ shinyUI(pageWithSidebar(
                 "Number of points:", 
                 min = 10, 
                 max = 1000, 
-                value = 250)
+                value = 250),
+    HTML("<hr />"),
+    helpText(HTML("Created using <a href = \"http://github.com/trestletech/shinyRGL\">shinyRGL</a>."))
   ),
   
   # Show the generated 3d scatterplot

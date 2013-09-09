@@ -39,19 +39,22 @@ $.extend(glOutputBinding, {
 });
 Shiny.outputBindings.register(glOutputBinding, 'shinyRGL.glbinding');
 
-$(window).resize(debounce(500, sendImageSize));
-/*$('body').on('shown.sendImageSize', '*', sendImageSize);
-$('body').on('shown.sendOutputHiddenState hidden.sendOutputHiddenState', '*',
-             sendOutputHiddenState);
-  */
-  
-  
+/**
+ * Update the GL Size as the widget becomes visible.
+ */
+$(document).ready(function(){
+  $('body').on('shown.sendOutputHiddenState hidden.sendOutputHiddenState', '*',
+                 function(){sendGLSize();});
+});
+
+$(window).resize(debounce(500, sendGLSize));
+
 // The server needs to know the size of each image and plot output element,
 // in case it is auto-sizing
 // Author: Joe Cheng
 // https://github.com/rstudio/shiny/blob/master/inst/www/shared/shiny.js
 // Modified by: Jeff Allen
-function sendImageSize() {
+function sendGLSize() {
   $('.shiny-gl-output').each(function() {
     if (this.offsetWidth !== 0 || this.offsetHeight !== 0) {
       Shiny.onInputChange('.clientdata_gl_output_' + this.id + '_width', this.offsetWidth);
@@ -62,7 +65,7 @@ function sendImageSize() {
 $(function() {
   // Init Shiny a little later than document ready, so user code can
   // run first (i.e. to register bindings)
-  setTimeout(sendImageSize, 1);
+  setTimeout(sendGLSize, 1);
 });
 
 

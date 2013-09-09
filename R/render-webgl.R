@@ -36,13 +36,16 @@ renderWebGL <- function(expr, width="auto", height="auto", env = parent.frame(),
     if (height == "auto") height <- shinysession$clientData[[paste(prefix, 
                                                     name, "_height", sep = "")]]
     
-    if (!is.null(width) && !is.numeric(width)){
+    if (is.null(width) || !is.numeric(width)){
       stop("Can't support non-numeric width parameter. 'width' must be in px.")
     }
     
-    if (!is.null(height) && !is.numeric(height)){
+    if (is.null(height) || !is.numeric(height)){
       stop("Can't support non-numeric height parameter. 'height' must be in px.")
     }
+    
+    print (width)
+    print (paste(width , " x " , height))
     
     if (is.null(width) || is.null(height) || width <= 0 || 
           height <= 0) return(NULL)

@@ -44,9 +44,6 @@ renderWebGL <- function(expr, width="auto", height="auto", env = parent.frame(),
       stop("Can't support non-numeric height parameter. 'height' must be in px.")
     }
     
-    print (width)
-    print (paste(width , " x " , height))
-    
     if (is.null(width) || is.null(height) || width <= 0 || 
           height <= 0) return(NULL)
     

@@ -15,7 +15,7 @@
   \item{height}{Plot height. See \code{width} for details.}
 }
 \description{
-  Render a WebGL \link{renderGL} in an application page.
+  Render a WebGL \link{renderWebGL} in an application page.
 }
 \author{
   Jeff Allen \email{jeff@trestletech.com}

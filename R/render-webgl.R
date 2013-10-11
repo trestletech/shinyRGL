@@ -8,23 +8,22 @@
 #'   scene in pixels.
 #' @param height The height of the WebGL scene. See \code{width} for details.
 #' @param env The environment in which \code{expr} should be evaluated.
-#' @param quoated Is \code{expr} a quoted expression (with \code{quote()})? This
+#' @param quoted Is \code{expr} a quoted expression (with \code{quote()})? This
 #'   is useful if you want to save an expression in a variable.
 #' @importFrom rgl open3d
 #' @importFrom rgl bg3d
 #' @importFrom rgl rgl.close
 #' @importFrom rgl writeWebGL
 #' @importFrom rgl par3d
+#' @importFrom shiny exprToFunction
+#' @importFrom shiny HTML
+#' @importFrom shiny isolate
 #' @author Jeff Allen \email{jeff@@trestletech.com}
 #' @export
 renderWebGL <- function(expr, width="auto", height="auto", env = parent.frame(), 
                      quoted = FALSE){
   func <- exprToFunction(expr, env, quoted)
   return(function(shinysession, name, ...) {
-    # Not to ruin all this 'imports' business, but we need r3dDefaults in the
-    # global namespace or rgl will crash, so we'll have to load it here.
-    library(rgl)
-    
     #Open a null RGL device.
     open3d(useNULL = TRUE)    
     func()
@@ -36,6 +35,10 @@ renderWebGL <- function(expr, width="auto", height="auto", env = parent.frame(),
     if (height == "auto") height <- shinysession$clientData[[paste(prefix, 
                                                     name, "_height", sep = "")]]
     
+    
+    if (is.null(width) || is.null(height) || width <= 0 || 
+          height <= 0) return(NULL)
+    
     if (is.null(width) || !is.numeric(width)){
       stop("Can't support non-numeric width parameter. 'width' must be in px.")
     }
@@ -43,10 +46,6 @@ renderWebGL <- function(expr, width="auto", height="auto", env = parent.frame(),
     if (is.null(height) || !is.numeric(height)){
       stop("Can't support non-numeric height parameter. 'height' must be in px.")
     }
-    
-    if (is.null(width) || is.null(height) || width <= 0 || 
-          height <= 0) return(NULL)
-    
     
     # Read in current values as they're updated so that we can regenerate 
     # the graph honoring the user's changes to the view, but isolate() so we

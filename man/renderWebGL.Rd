@@ -21,7 +21,7 @@
   \item{env}{The environment in which \code{expr} should be
   evaluated.}
 
-  \item{quoated}{Is \code{expr} a quoted expression (with
+  \item{quoted}{Is \code{expr} a quoted expression (with
   \code{quote()})? This is useful if you want to save an
   expression in a variable.}
 }

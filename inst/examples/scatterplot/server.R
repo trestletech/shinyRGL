@@ -3,6 +3,7 @@ options(rgl.useNULL=TRUE)
 
 library(shiny)
 library(shinyRGL)
+library(rgl)
 
 xPts <- runif(1000, 0, 1)
 yPts <- runif(1000, 0, 1)

@@ -19,6 +19,11 @@
 #' @importFrom shiny HTML
 #' @importFrom shiny isolate
 #' @author Jeff Allen \email{jeff@@trestletech.com}
+#' @examples \dontrun{ 
+#'    renderWebGL({
+#'      points3d(1:10,1:10,1:10)
+#'    })
+#' }
 #' @export
 renderWebGL <- function(expr, width="auto", height="auto", env = parent.frame(), 
                      quoted = FALSE){

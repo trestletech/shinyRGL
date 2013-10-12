@@ -12,6 +12,9 @@
 #' @importFrom shiny tags
 #' @importFrom shiny div
 #' @author Jeff Allen \email{jeff@@trestletech.com}
+#' @examples \dontrun{ 
+#'    webGLOutput("sctPlot")
+#' }
 #' @export
 webGLOutput <- function(outputId, width="100%", height="400px"){
   style <- paste("width:", validateCssUnit(width), ";", "height:", 

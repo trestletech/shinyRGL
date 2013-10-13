@@ -17,6 +17,11 @@
 \description{
   Render a WebGL \link{renderWebGL} in an application page.
 }
+\examples{
+\dontrun{
+   webGLOutput("sctPlot")
+}
+}
 \author{
   Jeff Allen \email{jeff@trestletech.com}
 }

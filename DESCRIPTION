@@ -2,7 +2,7 @@ Package: shinyRGL
 Type: Package
 Title: Shiny Wrappers for RGL
 Version: 0.1.0
-Date: 2013-08-31
+Date: 2013-10-13
 Author: Trestle Technology, LLC.
 Maintainer: Jeff Allen <jeff@trestletech.com>
 Description: Shiny wrappers for the RGL package. This package exposes RGL's

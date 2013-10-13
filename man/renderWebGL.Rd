@@ -28,6 +28,13 @@
 \description{
   Render a WebGL Shiny output.
 }
+\examples{
+\dontrun{
+   renderWebGL({
+     points3d(1:10,1:10,1:10)
+   })
+}
+}
 \author{
   Jeff Allen \email{jeff@trestletech.com}
 }

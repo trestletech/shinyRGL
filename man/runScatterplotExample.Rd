@@ -22,7 +22,7 @@
 }
 \examples{
 \dontrun{
- runBivarExample()
+ runScatterplotExample()
 }
 }
 \author{

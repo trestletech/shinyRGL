@@ -30,7 +30,7 @@ runBivarExample <- function(port = 8100L,
 #' @importFrom shiny runApp
 #' @author Michael J. Kane \email{kaneplusplus@@gmail.com}
 #' @examples \dontrun{
-#'  runBivarExample()
+#'  runScatterplotExample()
 #' }
 #' @export
 runScatterplotExample <- function(port = 8100L,

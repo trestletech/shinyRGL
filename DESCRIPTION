@@ -1,8 +1,8 @@
 Package: shinyRGL
 Type: Package
 Title: Shiny Wrappers for RGL
-Version: 0.1.0
-Date: 2013-10-13
+Version: 0.1.1
+Date: 2013-10-16
 Author: Trestle Technology, LLC.
 Maintainer: Jeff Allen <jeff@trestletech.com>
 Description: Shiny wrappers for the RGL package. This package exposes RGL's
@@ -20,3 +20,4 @@ Collate:
     'init.R'
     'render-webgl.R'
     'webgl-output.R'
+    'examples.R'

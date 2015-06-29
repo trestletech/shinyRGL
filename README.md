@@ -11,6 +11,8 @@ install_github("rgl", "trestletech", "js-class")
 
 You can also look to see the status of unafilliated users who have forked this repository to see if any of them have what you're looking for: https://github.com/trestletech/shinyRGL/network
 
+Pull requests and/or collaborators are welcome. Get in touch with me if you're interested.
+
 ## Intro
 
 [Shiny](http://rstudio.com/shiny/) wrapper for the [RGL package](https://r-forge.r-project.org/projects/rgl/). This package enables users to create Shiny apps that use

@@ -1,6 +1,18 @@
 shiny-rgl
 =========
 
+## WARNING
+
+I don't have much time to devote to this repository and, due to recent changes in the rgl package, shinyRGL largely needs to be re-written to be made compatible. You may have better luck running an old version of rgl via
+
+```
+install_github("rgl", "trestletech", "js-class")
+```
+
+You can also look to see the status of unafilliated users who have forked this repository to see if any of them have what you're looking for: https://github.com/trestletech/shinyRGL/network
+
+## Intro
+
 [Shiny](http://rstudio.com/shiny/) wrapper for the [RGL package](https://r-forge.r-project.org/projects/rgl/). This package enables users to create Shiny apps that use
 interactive 3D graphics in WebGL using the RGL package. The implementation can
 be as simple as adding lines like the following:
